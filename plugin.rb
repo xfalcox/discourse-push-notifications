@@ -9,6 +9,8 @@ gem 'webpush', '0.3.1'
 
 enabled_site_setting :push_notifications_enabled
 
+register_asset "stylesheets/push-notifications.scss"
+
 after_initialize do
   module ::DiscoursePushNotifications
     PLUGIN_NAME ||= "discourse_push_notifications".freeze
@@ -63,7 +65,7 @@ after_initialize do
     skip_before_action :preload_json
 
     def subscribe
-      DiscoursePushNotifications::Pusher.subscribe(current_user, push_params)
+      DiscoursePushNotifications::Pusher.subscribe(current_user, push_params, params[:send_confirmation])
       render json: success_json
     end
 

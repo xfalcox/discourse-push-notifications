@@ -1,0 +1,9 @@
+{{#if showPushNotificationPrompt}}
+  {{#unless bannerDismissed}}
+    {{#unless pushNotificationSubscribed}}
+      <div class="consent_banner">
+        {{i18n 'discourse_push_notifications.consent_prompt'}} <a {{action "subscribe"}}>{{i18n 'discourse_push_notifications.consent_enable'}}</a>.<a class="dismiss" {{action "dismiss"}}><i class="fa fa-times" aria-hidden="true"></i></a>
+      </div>
+    {{/unless}}
+  {{/unless}}
+{{/if}}

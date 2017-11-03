@@ -1,0 +1,12 @@
+.push-notification-prompt .consent_banner {
+  position: relative;
+  top: 60px;
+  padding: 20px 0px;
+  background-color: $tertiary-low;
+  text-align: center;
+}
+
+.push-notification-prompt .dismiss {
+  float: right;
+  margin-right: 15px;
+}
